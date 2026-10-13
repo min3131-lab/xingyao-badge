@@ -1,0 +1,49 @@
+{
+    "manufacturer": "waveshare",
+    "target": "esp32s3",
+    "builds": [
+        {
+            "name": "esp32-s3-touch-amoled-1.75",
+            "sdkconfig_append": [
+                "CONFIG_USE_WECHAT_MESSAGE_STYLE=n",
+                "CONFIG_BOARD_TYPE_WAVESHARE_ESP32_S3_TOUCH_AMOLED_1_75=y",
+                "CONFIG_USE_DEVICE_AEC=y"
+            ]
+        },
+        {
+            "name": "esp32-s3-touch-amoled-1.75c",
+            "sdkconfig_append": [
+                "CONFIG_USE_WECHAT_MESSAGE_STYLE=n",
+                "CONFIG_BOARD_TYPE_WAVESHARE_ESP32_S3_TOUCH_AMOLED_1_75C=y",
+                "CONFIG_USE_DEVICE_AEC=y"
+            ]
+        },
+        {
+            "name": "esp32-s3-touch-amoled-1.75c-anime-badge",
+            "sdkconfig_append": [
+                "CONFIG_BOARD_TYPE_WAVESHARE_ESP32_S3_TOUCH_AMOLED_1_75C=y",
+                "CONFIG_ANIME_BADGE_DESKTOP=y",
+                "CONFIG_LANGUAGE_ZH_CN=y",
+                "CONFIG_USE_WECHAT_MESSAGE_STYLE=n",
+                "CONFIG_USE_EMOTE_MESSAGE_STYLE=n",
+                "CONFIG_USE_MULTILINE_CHAT_MESSAGE=n",
+                "CONFIG_WAKE_WORD_DISABLED=y",
+                "CONFIG_USE_AUDIO_PROCESSOR=y",
+                "CONFIG_USE_DEVICE_AEC=y",
+                "CONFIG_USE_AUDIO_DEBUGGER=n",
+                "CONFIG_LV_USE_PERF_MONITOR=n",
+                "CONFIG_LV_USE_MEM_MONITOR=n",
+                "CONFIG_LV_DEF_REFR_PERIOD=33",
+                "CONFIG_FREERTOS_HZ=1000",
+                "CONFIG_LV_USE_QRCODE=y",
+                "CONFIG_LV_FONT_MONTSERRAT_40=y",
+                "CONFIG_LV_USE_LZ4=y",
+                "CONFIG_LV_USE_LZ4_INTERNAL=y",
+                "CONFIG_ESPTOOLPY_FLASHSIZE_32MB=y",
+                "CONFIG_PARTITION_TABLE_CUSTOM_FILENAME=\"partitions/badge32.csv\"",
+                "CONFIG_IDF_EXPERIMENTAL_FEATURES=y",
+                "CONFIG_BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH=y"
+            ]
+        }
+    ]
+}

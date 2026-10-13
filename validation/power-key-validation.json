@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-11T16:53:19",
+  "board": "ESP32-S3-Touch-AMOLED-1.75C",
+  "sdk": "ESP-IDF 5.5.5",
+  "firmware_sha256": "f8076d9e79adc6af21558c84d51f8833a3f55353e415160855ef937580a17726",
+  "firmware_bytes": 3816080,
+  "app_partition_free_bytes": 312688,
+  "assets_changed": false,
+  "build": "passed",
+  "flash": "app only, esptool hash verified",
+  "memory_state": "cold-start badge; audio=0; screen on",
+  "memory_samples": [
+    {
+      "internal": 181671,
+      "min": 83240,
+      "largest": 94208,
+      "psram": 7126384,
+      "largest_psram": 7077888,
+      "audio": 0,
+      "off": 0
+    },
+    {
+      "internal": 181623,
+      "min": 82248,
+      "largest": 94208,
+      "psram": 7126384,
+      "largest_psram": 7077888,
+      "audio": 0,
+      "off": 0
+    }
+  ],
+  "power_key": "short-press IRQ and both fade completions captured",
+  "physical_test": "用户确认息屏、唤醒和切换都正常",
+  "capture_note": "Captured boot and memory through 25 seconds; serial capture ended when the USB device became unavailable (Errno 6).",
+  "firmware_errors_in_captured_log": false
+}

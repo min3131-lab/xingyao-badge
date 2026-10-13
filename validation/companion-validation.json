@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-11T16:41:17",
+  "board": "ESP32-S3-Touch-AMOLED-1.75C",
+  "display": "466x466",
+  "sdk": "ESP-IDF 5.5.5",
+  "firmware": {
+    "xiaozhi.bin": {
+      "bytes": 3812352,
+      "sha256": "75bc54b74e8e217ba29693dc8853b04210a1002556dfb08b86f764a05843aeb0"
+    },
+    "generated_assets.bin": {
+      "bytes": 8604407,
+      "sha256": "c690744e6a3193fb9ae829b2e9713ddca39090b5fefcf64c54b2e8b7f1cc6b49"
+    }
+  },
+  "validation": {
+    "host_tests": 14,
+    "host_tests_result": "passed",
+    "lvgl_render": "10 screens, page navigation and 100 QR create/destroy cycles passed",
+    "non_badge_syntax": "5 files passed; not a full second-board build",
+    "flash": "app and assets: esptool SHA verification passed",
+    "boot": "40 seconds, no crash/assert/allocation failure detected",
+    "internal_free_bytes": 182219,
+    "animation_render_hz": [
+      9.9,
+      10.0,
+      10.8
+    ],
+    "physical_interactions": "awaiting user feedback",
+    "limitations": [
+      "step estimate needs calibration on actual wearing position",
+      "microphone, speaker and network conversation need physical interaction test",
+      "ongoing focus and outing sessions end on reboot",
+      "offline days and companionship use powered-on time"
+    ]
+  }
+}

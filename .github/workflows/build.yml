@@ -1,0 +1,52 @@
+name: Xingyao Badge
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: badge-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: 主机回归测试
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s scripts/tests -v
+
+  firmware:
+    name: ESP32-S3 徽章固件
+    # 发布时只自动运行轻量测试；手动触发才构建当前徽章。
+    if: github.event_name == 'workflow_dispatch'
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 构建已验证的徽章变体
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.5.5
+          target: esp32s3
+          command: BADGE_BUILD_DIR="$PWD/build" ./scripts/build_badge.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xingyao-badge-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            build/xiaozhi.bin
+            build/generated_assets.bin
+            build/bootloader/bootloader.bin
+            build/partition_table/partition-table.bin
+            build/ota_data_initial.bin
+            build/flash_args
